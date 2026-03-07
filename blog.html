@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Blog — Sovereign Writings by Alice Bazdikian</title>
+  <meta name="description" content="Raw, real, and revolutionary essays on sovereignty, midlife identity, desire, and reclaiming your power. By Alice Bazdikian.">
+  <meta name="author" content="Alice Bazdikian">
+  <link rel="canonical" href="https://alicebazdikian.com/blog.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alicebazdikian.com/blog.html">
+  <meta property="og:title" content="The Blog — Sovereign Writings by Alice Bazdikian">
+  <meta property="og:description" content="Raw, real, and revolutionary essays on sovereignty, midlife identity, desire, and reclaiming your power.">
+  <meta property="og:image" content="https://alicebazdikian.com/brand_assets/Sovereign AF Book cover.png">
+  <meta property="og:site_name" content="Alice Bazdikian">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Blog — Sovereign Writings by Alice Bazdikian">
+  <meta name="twitter:description" content="Raw, real, and revolutionary essays on sovereignty, midlife identity, desire, and reclaiming your power.">
+  <meta name="twitter:image" content="https://alicebazdikian.com/brand_assets/Sovereign AF Book cover.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Jost', sans-serif; background: #FFFDF7; color: #1a1a1a; overflow-x: hidden; }
+    .font-display { font-family: 'Cormorant Garamond', Georgia, serif; }
+
+    @font-face {
+      font-family: 'AlloverModern';
+      src: url('brand_assets/AlloverModernBold.ttf') format('truetype');
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* NAV */
+    #navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 3rem;
+      background: rgba(58,80,41,0.97);
+      backdrop-filter: blur(12px);
+      transition: box-shadow 0.3s ease;
+    }
+    #navbar.scrolled { box-shadow: 0 1px 24px rgba(0,0,0,0.22); }
+    .nav-link {
+      font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: rgba(255,255,255,0.72); text-decoration: none; font-weight: 500;
+      transition: color 0.2s ease;
+    }
+    .nav-link:hover { color: white; }
+
+    .btn-coral {
+      display: inline-block; background: #E26F54; color: white;
+      font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+      font-weight: 600; padding: 0.85rem 1.8rem; text-decoration: none;
+      border-radius: 2px; transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .btn-coral:hover { background: #c85c42; transform: translateY(-1px); }
+
+    .btn-outline {
+      display: inline-block; border: 1px solid #3A5029; color: #3A5029;
+      font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+      font-weight: 600; padding: 0.85rem 1.8rem; text-decoration: none;
+      border-radius: 2px; transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+    }
+    .btn-outline:hover { background: #3A5029; color: white; transform: translateY(-1px); }
+
+    /* Grain texture */
+    .grain::before {
+      content: ''; position: absolute; inset: 0; z-index: 1;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    /* Card grid */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    @media (max-width: 900px) {
+      .blog-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 580px) {
+      .blog-grid { grid-template-columns: 1fr; }
+      #navbar { padding: 1.25rem 1.5rem; }
+    }
+
+    .blog-card {
+      background: white;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 2px 20px rgba(58,80,41,0.07);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+    }
+    .blog-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(58,80,41,0.14); }
+
+    .card-thumb {
+      position: relative; height: 180px; overflow: hidden; flex-shrink: 0;
+    }
+    .card-thumb-inner {
+      width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .card-category {
+      position: absolute; bottom: 1rem; left: 1rem;
+      font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
+      font-weight: 600; padding: 0.3rem 0.75rem; border-radius: 1px;
+    }
+
+    .card-body { padding: 1.75rem; flex: 1; display: flex; flex-direction: column; }
+    .card-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.35rem; font-weight: 600; line-height: 1.25;
+      color: #1a1a1a; margin-bottom: 0.75rem;
+    }
+    .card-excerpt {
+      font-size: 0.85rem; line-height: 1.75; color: #666; font-weight: 300;
+      margin-bottom: 1.25rem; flex: 1;
+    }
+    .card-meta {
+      display: flex; align-items: center; justify-content: space-between;
+      border-top: 1px solid rgba(58,80,41,0.1); padding-top: 1rem;
+      font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase;
+      color: #999; font-weight: 500;
+    }
+    .card-read {
+      color: #E26F54; font-weight: 600; font-size: 0.72rem;
+      letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .card-read:hover { color: #c85c42; }
+
+    /* Reveal animation */
+    .reveal {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* Botanical decorative element */
+    .botanical-circle {
+      position: absolute; border-radius: 50%; opacity: 0.15;
+    }
+
+    /* Featured post */
+    .featured-post {
+      display: grid; grid-template-columns: 1fr 1fr; min-height: 420px;
+      background: white; border-radius: 4px; overflow: hidden;
+      box-shadow: 0 4px 30px rgba(58,80,41,0.1); margin-bottom: 4rem;
+      text-decoration: none; color: inherit;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .featured-post:hover { box-shadow: 0 16px 60px rgba(58,80,41,0.18); transform: translateY(-2px); }
+    @media (max-width: 768px) {
+      .featured-post { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="index.html" style="font-family:'AlloverModern',sans-serif;font-size:1.7rem;color:white;text-decoration:none;letter-spacing:0.08em;">Sovereign AF</a>
+  <div class="hidden md:flex items-center gap-9">
+    <a href="about.html" class="nav-link">About Alice</a>
+    <a href="book.html" class="nav-link">Book</a>
+    <a href="speaking.html" class="nav-link">Speaking</a>
+    <a href="blog.html" class="nav-link" style="color:white;">Blog</a>
+    <a href="audit.html" target="_blank" rel="noopener" class="btn-coral" style="font-size:0.72rem;padding:0.7rem 1.4rem;">Take the Audit</a>
+  </div>
+  <button id="mob-btn" class="md:hidden text-white p-1" aria-label="Menu">
+    <svg width="24" height="18" viewBox="0 0 24 18" fill="none"><line x1="0" y1="1" x2="24" y2="1" stroke="white" stroke-width="1.5"/><line x1="0" y1="9" x2="24" y2="9" stroke="white" stroke-width="1.5"/><line x1="0" y1="17" x2="24" y2="17" stroke="white" stroke-width="1.5"/></svg>
+  </button>
+</nav>
+
+<!-- Mobile drawer -->
+<div id="mob-nav" style="display:none;position:fixed;inset:0;z-index:150;background:#3A5029;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;">
+  <button id="mob-close" style="position:absolute;top:1.5rem;right:2rem;background:none;border:none;color:white;font-size:1.5rem;cursor:pointer;">✕</button>
+  <a href="about.html" class="font-display" style="font-size:2.5rem;color:white;text-decoration:none;font-weight:400;">About Alice</a>
+  <a href="book.html" class="font-display" style="font-size:2.5rem;color:white;text-decoration:none;font-weight:400;">Book</a>
+  <a href="speaking.html" class="font-display" style="font-size:2.5rem;color:white;text-decoration:none;font-weight:400;">Speaking</a>
+  <a href="blog.html" class="font-display" style="font-size:2.5rem;color:white;text-decoration:none;font-weight:400;">Blog</a>
+  <a href="audit.html" target="_blank" rel="noopener" class="btn-coral" style="margin-top:1rem;">Take the Free Audit</a>
+</div>
+
+
+<!-- HERO -->
+<section class="grain" style="background:#3A5029;padding-top:80px;position:relative;overflow:hidden;min-height:44vh;display:flex;align-items:flex-end;">
+  <div style="position:absolute;inset:0;z-index:0;">
+    <img src="brand_assets/Alice-Meditating.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;opacity:0.18;">
+    <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(58,80,41,0.6) 0%,rgba(58,80,41,0.97) 100%);"></div>
+  </div>
+  <!-- Botanical decorations -->
+  <div style="position:absolute;top:-60px;right:10%;width:380px;height:380px;border-radius:50%;border:1px solid rgba(218,175,193,0.15);z-index:2;pointer-events:none;"></div>
+  <div style="position:absolute;top:20px;right:15%;width:220px;height:220px;border-radius:50%;border:1px solid rgba(218,175,193,0.1);z-index:2;pointer-events:none;"></div>
+  <div style="max-width:1280px;margin:0 auto;padding:3rem 3rem 4rem;width:100%;position:relative;z-index:3;">
+    <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem;">
+      <div style="width:32px;height:1px;background:#DAAFC1;flex-shrink:0;"></div>
+      <span style="font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:#DAAFC1;font-weight:500;">Sovereign Writings</span>
+    </div>
+    <h1 class="font-display" style="font-size:clamp(2.8rem,5.5vw,5rem);font-weight:500;color:white;line-height:1.05;letter-spacing:-0.025em;margin-bottom:1.25rem;">
+      Raw. Real.<br><em style="color:#DAAFC1;font-style:italic;">Revolutionary.</em>
+    </h1>
+    <p style="font-size:1rem;color:rgba(255,255,255,0.65);font-weight:300;max-width:520px;line-height:1.75;">
+      Essays on sovereignty, midlife identity, desire, anger, and the sacred work of becoming who you actually are.
+    </p>
+  </div>
+</section>
+
+
+<!-- BLOG GRID -->
+<section style="background:#FFFDF7;padding:5rem 0 7rem;">
+  <div style="max-width:1280px;margin:0 auto;padding:0 3rem;">
+
+    <!-- Featured post (largest, most recent) -->
+    <a href="blog-midlife-revolution.html" class="featured-post reveal" style="margin-bottom:4rem;">
+      <div style="background:#3A5029;position:relative;overflow:hidden;min-height:280px;">
+        <img src="brand_assets/Alice-Meditating.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:45% 30%;opacity:0.35;position:absolute;inset:0;">
+        <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(58,80,41,0.85) 0%,rgba(74,138,124,0.6) 100%);"></div>
+        <div style="position:absolute;bottom:2rem;left:2rem;right:2rem;z-index:2;">
+          <span style="font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;font-weight:600;background:#DAAFC1;color:#3A5029;padding:0.3rem 0.75rem;border-radius:1px;">Featured · Midlife</span>
+        </div>
+      </div>
+      <div style="padding:3rem;display:flex;flex-direction:column;justify-content:center;">
+        <p style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:#4A8A7C;font-weight:500;margin-bottom:1rem;">Jan 13, 2026 · Alice Bazdikian</p>
+        <h2 class="font-display" style="font-size:clamp(1.6rem,2.5vw,2.4rem);font-weight:600;color:#1a1a1a;line-height:1.2;margin-bottom:1rem;">Embracing the Midlife Revolution</h2>
+        <p style="font-size:0.9rem;line-height:1.8;color:#555;font-weight:300;margin-bottom:1.5rem;">Society calls it a crisis. Ancient wisdom calls it the Uranus Opposition — the moment the universe asks: Are you free? This is not deterioration. This is Revolution.</p>
+        <span class="card-read">Read Essay →</span>
+      </div>
+    </a>
+
+    <!-- Post grid -->
+    <div class="blog-grid">
+
+      <!-- Card 1 -->
+      <a href="blog-stop-asking-why-me.html" class="blog-card reveal">
+        <div class="card-thumb">
+          <div class="card-thumb-inner" style="background:linear-gradient(135deg,#3A5029 0%,#4A8A7C 100%);">
+            <div class="botanical-circle" style="width:160px;height:160px;background:rgba(218,175,193,0.2);top:-30px;right:-30px;position:absolute;border-radius:50%;"></div>
+            <span class="font-display" style="font-size:4rem;color:rgba(255,255,255,0.12);font-style:italic;position:absolute;">I</span>
+          </div>
+          <div class="card-category" style="background:rgba(255,255,255,0.15);color:white;">Sovereignty</div>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Stop Asking "Why Me?" — You Signed the Contract</h3>
+          <p class="card-excerpt">Before birth, your soul willingly chose this specific life, complete with its challenges. You are not a victim of fate. You are a volunteer.</p>
+          <div class="card-meta">
+            <span>Jan 7, 2026</span>
+            <span class="card-read">Read →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 2 -->
+      <a href="blog-on-letting-go.html" class="blog-card reveal" style="transition-delay:0.05s;">
+        <div class="card-thumb">
+          <div class="card-thumb-inner" style="background:linear-gradient(135deg,#DAAFC1 0%,#E26F54 100%);">
+            <div style="position:absolute;width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,0.3);top:20px;left:20px;"></div>
+          </div>
+          <div class="card-category" style="background:rgba(58,80,41,0.85);color:white;">Self-Love</div>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">On Letting Go and Finding the Love Source Within</h3>
+          <p class="card-excerpt">You cannot make someone see you if they are committed to their blindness. In Tepoztlan, I discovered: I am the Source. I am the lover I have been waiting for.</p>
+          <div class="card-meta">
+            <span>Jan 7, 2026</span>
+            <span class="card-read">Read →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 3 -->
+      <a href="blog-i-am-the-medicine.html" class="blog-card reveal" style="transition-delay:0.1s;">
+        <div class="card-thumb">
+          <div class="card-thumb-inner" style="background:linear-gradient(135deg,#1a2e12 0%,#3A5029 100%);">
+            <div style="position:absolute;bottom:-20px;right:-20px;width:140px;height:140px;border-radius:50%;background:rgba(218,175,193,0.15);"></div>
+          </div>
+          <div class="card-category" style="background:rgba(218,175,193,0.9);color:#3A5029;">Shadow Work</div>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">I Am the Medicine</h3>
+          <p class="card-excerpt">We spend our whole lives looking for the medicine outside of ourselves. But no one is coming to save you — and that is the most liberating news you will ever hear.</p>
+          <div class="card-meta">
+            <span>Jan 7, 2026</span>
+            <span class="card-read">Read →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 4 -->
+      <a href="blog-being-the-sky.html" class="blog-card reveal" style="transition-delay:0.0s;">
+        <div class="card-thumb">
+          <div class="card-thumb-inner" style="background:linear-gradient(135deg,#4A8A7C 0%,#2d6b60 100%);">
+            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:80px;height:80px;border-radius:50%;border:1px solid rgba(255,255,255,0.25);"></div>
+            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120px;height:120px;border-radius:50%;border:1px solid rgba(255,255,255,0.12);"></div>
+          </div>
+          <div class="card-category" style="background:rgba(58,80,41,0.85);color:white;">Sovereignty</div>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">The Art of Being the Sky and Letting the Sh*tstorms Pass</h3>
+          <p class="card-excerpt">You are not the voice in your head — you are the Witness. You are the Sky. Your emotions are the Weather. Let the storms pass. The sun is always waiting.</p>
+          <div class="card-meta">
+            <span>Jan 7, 2026</span>
+            <span class="card-read">Read →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 5 -->
+      <a href="blog-why-no-is-sexy.html" class="blog-card reveal" style="transition-delay:0.05s;">
+        <div class="card-thumb">
+          <div class="card-thumb-inner" style="background:linear-gradient(135deg,#FBBE91 0%,#E26F54 100%);">
+            <span class="font-display" style="font-size:5rem;font-weight:700;color:rgba(58,80,41,0.15);position:absolute;font-style:italic;">No.</span>
+          </div>
+          <div class="card-category" style="background:rgba(58,80,41,0.85);color:white;">Boundaries</div>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Why "No" Is the Sexiest Word</h3>
+          <p class="card-excerpt">Time is the only currency that truly matters. Selecting option A means forgoing options B, C, and D. "No" is a complete answer requiring no justification.</p>
+          <div class="card-meta">
+            <span>Jan 7, 2026</span>
+            <span class="card-read">Read →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 6 -->
+      <a href="blog-sued-employer.html" class="blog-card reveal" style="transition-delay:0.1s;">
+        <div class="card-thumb">
+          <div class="card-thumb-inner" style="background:linear-gradient(135deg,#2d1a12 0%,#5a2e1a 100%);">
+            <div style="position:absolute;left:1.5rem;top:50%;transform:translateY(-50%);width:3px;height:60%;background:rgba(226,111,84,0.6);border-radius:2px;"></div>
+          </div>
+          <div class="card-category" style="background:rgba(226,111,84,0.9);color:white;">Career & Power</div>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">I Sued My Employer and Won — Why Burning Bridges Is Sometimes the Only Way Home</h3>
+          <p class="card-excerpt">I was a warrior. I proved I could confront corporate misconduct and prevail. It is not safety if it requires your silence. Never let them keep your crown.</p>
+          <div class="card-meta">
+            <span>Jan 7, 2026</span>
+            <span class="card-read">Read →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 7 -->
+      <a href="blog-initiation-of-love.html" class="blog-card reveal" style="transition-delay:0.0s;">
+        <div class="card-thumb">
+          <div class="card-thumb-inner" style="background:linear-gradient(135deg,#DAAFC1 0%,#c48fad 100%);">
+            <div style="position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent,transparent 12px,rgba(255,255,255,0.04) 12px,rgba(255,255,255,0.04) 14px);"></div>
+          </div>
+          <div class="card-category" style="background:rgba(58,80,41,0.85);color:white;">Self-Love</div>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">The Initiation of Love</h3>
+          <p class="card-excerpt">No external savior is coming — which means you have complete power to reclaim your authentic self. The Queen of the Universe is still in there, waiting for the crown.</p>
+          <div class="card-meta">
+            <span>Jan 7, 2026</span>
+            <span class="card-read">Read →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 8 -->
+      <a href="blog-experts-keeping-small.html" class="blog-card reveal" style="transition-delay:0.05s;">
+        <div class="card-thumb">
+          <div class="card-thumb-inner" style="background:linear-gradient(135deg,#3A5029 0%,#2a3d1e 100%);">
+            <div style="position:absolute;right:1.5rem;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:6px;">
+              <div style="width:40px;height:2px;background:rgba(251,190,145,0.5);border-radius:1px;"></div>
+              <div style="width:28px;height:2px;background:rgba(251,190,145,0.3);border-radius:1px;"></div>
+              <div style="width:36px;height:2px;background:rgba(251,190,145,0.4);border-radius:1px;"></div>
+            </div>
+          </div>
+          <div class="card-category" style="background:rgba(251,190,145,0.9);color:#3A5029;">Sovereignty</div>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Why "Experts" Are Keeping You Small</h3>
+          <p class="card-excerpt">Each of us holds within our bodies, minds, and souls all the knowledge we need to live authentically. Following the rules is just a fancy way of silencing your internal voice.</p>
+          <div class="card-meta">
+            <span>Jan 7, 2026</span>
+            <span class="card-read">Read →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 9 -->
+      <a href="blog-your-body-knows.html" class="blog-card reveal" style="transition-delay:0.1s;">
+        <div class="card-thumb">
+          <div class="card-thumb-inner" style="background:linear-gradient(135deg,#4A8A7C 0%,#DAAFC1 100%);">
+            <div style="position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(circle at 30% 50%,rgba(255,255,255,0.08) 0%,transparent 60%);"></div>
+          </div>
+          <div class="card-category" style="background:rgba(58,80,41,0.85);color:white;">Human Design</div>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Your Body Always Knows the Truth Before Your Mind Can Explain It</h3>
+          <p class="card-excerpt">Your body and soul recognize truth before your intellect can rationalize it — before doubt, risk assessment, or seeking external validation takes hold.</p>
+          <div class="card-meta">
+            <span>Oct 31, 2025</span>
+            <span class="card-read">Read →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 10 -->
+      <a href="blog-proving-vs-being.html" class="blog-card reveal" style="transition-delay:0.0s;">
+        <div class="card-thumb">
+          <div class="card-thumb-inner" style="background:linear-gradient(135deg,#FBBE91 0%,#e8a76b 100%);">
+            <span class="font-display" style="font-size:3.5rem;font-weight:600;color:rgba(58,80,41,0.18);position:absolute;font-style:italic;">vs.</span>
+          </div>
+          <div class="card-category" style="background:rgba(58,80,41,0.85);color:white;">Identity</div>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Are You Proving Yourself or Being Yourself?</h3>
+          <p class="card-excerpt">When we operate from a place of needing validation, we're outsourcing our power. The universe will strip attachments — not as punishment, but as liberation.</p>
+          <div class="card-meta">
+            <span>Oct 31, 2025</span>
+            <span class="card-read">Read →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 11 -->
+      <a href="blog-pulling-desire.html" class="blog-card reveal" style="transition-delay:0.05s;">
+        <div class="card-thumb">
+          <div class="card-thumb-inner" style="background:linear-gradient(135deg,#2d1a12 0%,#3A5029 100%);">
+            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:70px;height:70px;border-radius:50%;background:rgba(226,111,84,0.25);"></div>
+            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:110px;height:110px;border-radius:50%;border:1px solid rgba(226,111,84,0.2);"></div>
+          </div>
+          <div class="card-category" style="background:rgba(226,111,84,0.9);color:white;">Manifestation</div>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Are You Pulling In What You Desire and Pushing It Away in the Same Breath?</h3>
+          <p class="card-excerpt">Trust is an active engagement with the unknown. Confidence and clarity are not "found" — they are created as you move forward.</p>
+          <div class="card-meta">
+            <span>Oct 31, 2025</span>
+            <span class="card-read">Read →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 12 -->
+      <a href="blog-own-your-desire.html" class="blog-card reveal" style="transition-delay:0.1s;">
+        <div class="card-thumb">
+          <div class="card-thumb-inner" style="background:linear-gradient(135deg,#E26F54 0%,#c85c42 100%);">
+            <div style="position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 10px,rgba(255,255,255,0.03) 10px,rgba(255,255,255,0.03) 12px);"></div>
+          </div>
+          <div class="card-category" style="background:rgba(58,80,41,0.85);color:white;">Desire & Power</div>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">How to Own Your Desire Even When It Scares You</h3>
+          <p class="card-excerpt">Desire is not dangerous. Your power is not a threat. You don't have to be fearless to be powerful. Your desires are divine. Your power is sacred.</p>
+          <div class="card-meta">
+            <span>Oct 30, 2025</span>
+            <span class="card-read">Read →</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Card 13 -->
+      <a href="blog-become-the-person.html" class="blog-card reveal" style="transition-delay:0.0s;">
+        <div class="card-thumb">
+          <div class="card-thumb-inner" style="background:linear-gradient(135deg,#4A8A7C 0%,#3A5029 100%);">
+            <div style="position:absolute;bottom:0;right:0;width:0;height:0;border-style:solid;border-width:0 0 80px 80px;border-color:transparent transparent rgba(218,175,193,0.1) transparent;"></div>
+          </div>
+          <div class="card-category" style="background:rgba(218,175,193,0.9);color:#3A5029;">Manifestation</div>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Why You Need to Become the Person Who Aligns with Your Manifestations</h3>
+          <p class="card-excerpt">You cannot attract or create what you feel separate from. You have to become the person who naturally aligns with that thing — the characteristics, behaviours, and beliefs.</p>
+          <div class="card-meta">
+            <span>Oct 30, 2025</span>
+            <span class="card-read">Read →</span>
+          </div>
+        </div>
+      </a>
+
+    </div><!-- end grid -->
+  </div>
+</section>
+
+
+<!-- CTA STRIP -->
+<section class="grain" style="background:#3A5029;padding:5rem 0;position:relative;overflow:hidden;">
+  <div style="position:absolute;top:-60px;left:-60px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(218,175,193,0.1) 0%,transparent 70%);pointer-events:none;"></div>
+  <div style="position:absolute;bottom:-60px;right:-40px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(74,138,124,0.12) 0%,transparent 70%);pointer-events:none;"></div>
+  <div style="max-width:800px;margin:0 auto;padding:0 3rem;text-align:center;position:relative;z-index:3;">
+    <div style="width:40px;height:1px;background:#DAAFC1;margin:0 auto 1.5rem;"></div>
+    <h2 class="font-display" style="font-size:clamp(2rem,4vw,3.2rem);font-weight:500;color:white;line-height:1.2;margin-bottom:1rem;font-style:italic;">
+      Ready to find out where you stand?
+    </h2>
+    <p style="font-size:1rem;color:rgba(255,255,255,0.6);font-weight:300;line-height:1.75;margin-bottom:2.5rem;">
+      Take the free Sovereignty Audit — 25 questions across 5 domains. Discover where you're living sovereign and where you've disappeared.
+    </p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="audit.html" target="_blank" rel="noopener" class="btn-coral">Take the Free Audit</a>
+      <a href="book.html" class="btn-outline" style="border-color:rgba(255,255,255,0.4);color:rgba(255,255,255,0.8);" onmouseover="this.style.background='rgba(255,255,255,0.1)'" onmouseout="this.style.background='transparent'">Get the Book</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════ SOVEREIGNTY NEWSLETTER ════════════ -->
+<section style="background:#FBBE91;padding:6rem 0;position:relative;overflow:hidden;">
+  <div style="position:absolute;top:-60px;right:-60px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(58,80,41,0.08) 0%,transparent 70%);pointer-events:none;"></div>
+  <div style="position:absolute;bottom:-40px;left:-40px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(226,111,84,0.1) 0%,transparent 70%);pointer-events:none;"></div>
+  <div style="max-width:1280px;margin:0 auto;padding:0 3rem;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;">
+      <div>
+        <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.5rem;">
+          <div style="width:32px;height:1px;background:#3A5029;flex-shrink:0;"></div>
+          <span style="font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(58,80,41,0.65);font-weight:500;">Sovereignty Letters</span>
+        </div>
+        <h2 class="font-display" style="font-size:clamp(2rem,3.5vw,3rem);font-weight:600;letter-spacing:-0.02em;line-height:1.1;color:#3A5029;margin-bottom:1.25rem;">
+          Words for Women<br>Who Are Done<br><em style="font-weight:400;">Playing Small.</em>
+        </h2>
+        <p style="font-size:1rem;line-height:1.8;color:#4a4a4a;font-weight:300;max-width:380px;">
+          Raw reflections, tools, and provocations delivered to your inbox. No fluff. No performance. Just the truth you didn't know you needed.
+        </p>
+      </div>
+      <div>
+        <form id="newsletter-form" onsubmit="submitNewsletter(event)">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:0.75rem;">
+            <input type="text" id="nl-first" placeholder="First Name" required style="padding:0.9rem 1.1rem;border:1.5px solid rgba(58,80,41,0.25);border-radius:2px;font-family:'Jost',sans-serif;font-size:0.95rem;outline:none;background:rgba(255,255,255,0.75);transition:border-color 0.2s;" onfocus="this.style.borderColor='#3A5029'" onblur="this.style.borderColor='rgba(58,80,41,0.25)'">
+            <input type="text" id="nl-last" placeholder="Last Name" required style="padding:0.9rem 1.1rem;border:1.5px solid rgba(58,80,41,0.25);border-radius:2px;font-family:'Jost',sans-serif;font-size:0.95rem;outline:none;background:rgba(255,255,255,0.75);transition:border-color 0.2s;" onfocus="this.style.borderColor='#3A5029'" onblur="this.style.borderColor='rgba(58,80,41,0.25)'">
+          </div>
+          <input type="email" id="nl-email" placeholder="Email Address" required style="width:100%;padding:0.9rem 1.1rem;border:1.5px solid rgba(58,80,41,0.25);border-radius:2px;font-family:'Jost',sans-serif;font-size:0.95rem;outline:none;background:rgba(255,255,255,0.75);transition:border-color 0.2s;margin-bottom:0.75rem;" onfocus="this.style.borderColor='#3A5029'" onblur="this.style.borderColor='rgba(58,80,41,0.25)'">
+          <textarea id="nl-comments" placeholder="Comments or Questions? (optional)" rows="3" style="width:100%;padding:0.9rem 1.1rem;border:1.5px solid rgba(58,80,41,0.25);border-radius:2px;font-family:'Jost',sans-serif;font-size:0.95rem;outline:none;background:rgba(255,255,255,0.75);transition:border-color 0.2s;resize:vertical;margin-bottom:1rem;" onfocus="this.style.borderColor='#3A5029'" onblur="this.style.borderColor='rgba(58,80,41,0.25)'"></textarea>
+          <button type="submit" id="nl-btn" class="btn-coral" style="padding:0.9rem 2rem;">Join the Letters</button>
+          <p id="nl-msg" style="font-size:0.85rem;color:#3A5029;font-weight:600;margin-top:1rem;display:none;">✓ You're in. Watch your inbox.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="grain" style="background:#3A5029;padding:5rem 0 2.5rem;position:relative;">
+  <div style="max-width:1280px;margin:0 auto;padding:0 3rem;">
+    <div style="display:grid;grid-template-columns:1.5fr 1fr 1.5fr;gap:4rem;margin-bottom:4rem;">
+      <div>
+        <a href="index.html" class="font-display" style="font-size:1.6rem;font-weight:400;color:white;text-decoration:none;display:block;margin-bottom:1.25rem;">Alice Bazdikian</a>
+        <p style="font-size:0.9rem;color:rgba(255,255,255,0.5);line-height:1.75;font-weight:300;">I help high-capacity women who have outgrown their lives reclaim sovereignty without burning everything down.</p>
+      </div>
+      <div>
+        <h4 style="font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.4);font-weight:500;margin-bottom:1.5rem;">Navigate</h4>
+        <nav style="display:flex;flex-direction:column;gap:0.8rem;">
+          <a href="about.html" style="font-size:0.9rem;color:rgba(255,255,255,0.65);text-decoration:none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">About Alice</a>
+          <a href="book.html" style="font-size:0.9rem;color:rgba(255,255,255,0.65);text-decoration:none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">Sovereign AF Book</a>
+          <a href="speaking.html" style="font-size:0.9rem;color:rgba(255,255,255,0.65);text-decoration:none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">Speaking & Podcasts</a>
+          <a href="blog.html" style="font-size:0.9rem;color:rgba(255,255,255,0.65);text-decoration:none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">The Blog</a>
+          <a href="audit.html" target="_blank" rel="noopener" style="font-size:0.9rem;color:rgba(255,255,255,0.65);text-decoration:none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">Sovereignty Audit</a>
+        </nav>
+      </div>
+      <div>
+        <h4 style="font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.4);font-weight:500;margin-bottom:1.5rem;">Connect</h4>
+        <p style="font-size:0.88rem;color:rgba(255,255,255,0.55);line-height:1.75;margin-bottom:1.5rem;font-weight:300;">Follow the movement on Instagram, TikTok, and YouTube.</p>
+        <div style="display:flex;gap:1.25rem;align-items:center;">
+          <a href="https://www.instagram.com/sovereignaflife/" target="_blank" rel="noopener" aria-label="Instagram" style="color:rgba(255,255,255,0.65);transition:color 0.2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.65)'"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.tiktok.com/@sovereignaflife" target="_blank" rel="noopener" aria-label="TikTok" style="color:rgba(255,255,255,0.65);transition:color 0.2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.65)'"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.19 8.19 0 0 0 4.78 1.52V6.76a4.84 4.84 0 0 1-1.01-.07z"/></svg></a>
+          <a href="https://www.youtube.com/channel/UCL98E-OQm_vggDuTjxkbJFg" target="_blank" rel="noopener" aria-label="YouTube" style="color:rgba(255,255,255,0.65);transition:color 0.2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.65)'"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.54 3.6 12 3.6 12 3.6s-7.54 0-9.38.45A3.02 3.02 0 0 0 .5 6.19 31.7 31.7 0 0 0 .05 12a31.7 31.7 0 0 0 .45 5.81 3.02 3.02 0 0 0 2.12 2.14C4.46 20.4 12 20.4 12 20.4s7.54 0 9.38-.45a3.02 3.02 0 0 0 2.12-2.14A31.7 31.7 0 0 0 23.95 12a31.7 31.7 0 0 0-.45-5.81zM9.75 15.52V8.48L15.5 12l-5.75 3.52z"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+      <p style="font-size:0.8rem;color:rgba(255,255,255,0.35);">© 2026 Alice Bazdikian. All rights reserved.</p>
+      <p class="font-display" style="font-size:0.85rem;color:rgba(255,255,255,0.2);letter-spacing:0.15em;font-style:italic;">Sovereign AF</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('mob-btn').addEventListener('click', () => { document.getElementById('mob-nav').style.display = 'flex'; });
+document.getElementById('mob-close').addEventListener('click', () => { document.getElementById('mob-nav').style.display = 'none'; });
+window.addEventListener('scroll', () => { document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20); });
+const ro = new IntersectionObserver(entries => { entries.forEach(el => { if (el.isIntersecting) { el.target.classList.add('visible'); ro.unobserve(el.target); } }); }, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+
+const SUPABASE_URL = 'https://krownfpcgaybmgneddia.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imtyb3duZnBjZ2F5Ym1nbmVkZGlhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI2NTA2NzMsImV4cCI6MjA4ODIyNjY3M30.Y_fqwUOl0xi_AAxKMl--ah-k3emn2DnC8EneG5ocJsY';
+
+async function submitNewsletter(e) {
+  e.preventDefault();
+  const btn = document.getElementById('nl-btn');
+  btn.textContent = 'Joining…';
+  btn.disabled = true;
+  try {
+    await fetch(`${SUPABASE_URL}/rest/v1/subscribers`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'apikey': SUPABASE_KEY, 'Authorization': `Bearer ${SUPABASE_KEY}`, 'Prefer': 'return=minimal' },
+      body: JSON.stringify({
+        email: document.getElementById('nl-email').value.trim(),
+        first_name: document.getElementById('nl-first').value.trim(),
+        last_name: document.getElementById('nl-last').value.trim(),
+        comments: document.getElementById('nl-comments').value.trim(),
+        source: 'newsletter'
+      })
+    });
+  } catch(_) {}
+  document.getElementById('nl-msg').style.display = 'block';
+  btn.style.display = 'none';
+}
+</script>
+</body>
+</html>

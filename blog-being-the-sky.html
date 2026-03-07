@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Art of Being the Sky and Letting the Sh*tstorms Pass | Alice Bazdikian</title>
+  <meta name="description" content="You are not the voice in your head. You are the Witness. You are the Sky. Your emotions are the Weather. Let the storms pass. By Alice Bazdikian.">
+  <meta name="author" content="Alice Bazdikian">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Jost', sans-serif; background: #FFFDF7; color: #1a1a1a; overflow-x: hidden; }
+    .font-display { font-family: 'Cormorant Garamond', Georgia, serif; }
+    @font-face { font-family: 'AlloverModern'; src: url('brand_assets/AlloverModernBold.ttf') format('truetype'); font-weight: 100 900; font-display: swap; }
+    #navbar { position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.25rem 3rem;background:rgba(58,80,41,0.97);backdrop-filter:blur(12px); }
+    .nav-link { font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.72);text-decoration:none;font-weight:500; }
+    .nav-link:hover { color:white; }
+    .btn-coral { display:inline-block;background:#E26F54;color:white;font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:600;padding:0.85rem 1.8rem;text-decoration:none;border-radius:2px;transition:transform 0.2s ease,background 0.2s ease; }
+    .btn-coral:hover { background:#c85c42;transform:translateY(-1px); }
+    .grain::before { content:'';position:absolute;inset:0;z-index:1;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none; }
+    .article-body p { font-size:1.05rem;line-height:1.9;color:#3a3a3a;font-weight:300;margin-bottom:1.75rem; }
+    .article-body h2 { font-family:'Cormorant Garamond',Georgia,serif;font-size:1.8rem;font-weight:600;color:#3A5029;line-height:1.2;margin:2.5rem 0 1rem; }
+    .article-body strong { font-weight:600;color:#1a1a1a; }
+    .pull-quote { font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(1.4rem,2.5vw,2rem);font-style:italic;color:#E26F54;line-height:1.4;padding:2rem 0;border-top:2px solid rgba(226,111,84,0.2);border-bottom:2px solid rgba(226,111,84,0.2);margin:2.5rem 0;font-weight:400; }
+    .sidebar-card { background:white;border-radius:4px;padding:1.75rem;box-shadow:0 2px 20px rgba(58,80,41,0.07);margin-bottom:1.5rem; }
+    @media(max-width:900px){ .article-grid { grid-template-columns:1fr !important; } .sidebar { display:none; } }
+    @media(max-width:580px){ #navbar { padding:1.25rem 1.5rem; } }
+  </style>
+</head>
+<body>
+<nav id="navbar">
+  <a href="index.html" style="font-family:'AlloverModern',sans-serif;font-size:1.7rem;color:white;text-decoration:none;letter-spacing:0.08em;">Sovereign AF</a>
+  <div class="hidden md:flex items-center gap-9">
+    <a href="about.html" class="nav-link">About Alice</a>
+    <a href="book.html" class="nav-link">Book</a>
+    <a href="speaking.html" class="nav-link">Speaking</a>
+    <a href="blog.html" class="nav-link" style="color:white;">Blog</a>
+    <a href="audit.html" target="_blank" rel="noopener" class="btn-coral" style="font-size:0.72rem;padding:0.7rem 1.4rem;">Take the Audit</a>
+  </div>
+  <button id="mob-btn" class="md:hidden text-white p-1" aria-label="Menu">
+    <svg width="24" height="18" viewBox="0 0 24 18" fill="none"><line x1="0" y1="1" x2="24" y2="1" stroke="white" stroke-width="1.5"/><line x1="0" y1="9" x2="24" y2="9" stroke="white" stroke-width="1.5"/><line x1="0" y1="17" x2="24" y2="17" stroke="white" stroke-width="1.5"/></svg>
+  </button>
+</nav>
+<div id="mob-nav" style="display:none;position:fixed;inset:0;z-index:150;background:#3A5029;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;">
+  <button id="mob-close" style="position:absolute;top:1.5rem;right:2rem;background:none;border:none;color:white;font-size:1.5rem;cursor:pointer;">✕</button>
+  <a href="about.html" class="font-display" style="font-size:2.5rem;color:white;text-decoration:none;font-weight:400;">About Alice</a>
+  <a href="book.html" class="font-display" style="font-size:2.5rem;color:white;text-decoration:none;font-weight:400;">Book</a>
+  <a href="blog.html" class="font-display" style="font-size:2.5rem;color:white;text-decoration:none;font-weight:400;">Blog</a>
+  <a href="audit.html" target="_blank" rel="noopener" class="btn-coral" style="margin-top:1rem;">Take the Free Audit</a>
+</div>
+
+<section class="grain" style="background:#3A5029;padding-top:80px;position:relative;overflow:hidden;min-height:50vh;display:flex;align-items:flex-end;">
+  <div style="position:absolute;inset:0;z-index:0;">
+    <img src="brand_assets/Alice-Meditating.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:45% 30%;opacity:0.22;">
+    <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(58,80,41,0.5) 0%,rgba(58,80,41,0.97) 100%);"></div>
+  </div>
+  <div style="max-width:860px;margin:0 auto;padding:3rem 3rem 4.5rem;width:100%;position:relative;z-index:3;">
+    <div style="margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
+      <a href="blog.html" style="font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.5);text-decoration:none;font-weight:500;">← All Essays</a>
+      <span style="color:rgba(255,255,255,0.2);">·</span>
+      <span style="font-size:0.62rem;letter-spacing:0.15em;text-transform:uppercase;font-weight:600;padding:0.3rem 0.75rem;background:rgba(218,175,193,0.2);color:#DAAFC1;border-radius:1px;">Sovereignty</span>
+    </div>
+    <h1 class="font-display" style="font-size:clamp(2rem,4.5vw,3.6rem);font-weight:600;color:white;line-height:1.1;letter-spacing:-0.02em;margin-bottom:1.5rem;">
+      The Art of Being the Sky<br><em style="color:#DAAFC1;font-style:italic;">and Letting the Sh*tstorms Pass</em>
+    </h1>
+    <div style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;">
+      <span style="font-size:0.82rem;color:rgba(255,255,255,0.75);font-weight:500;">Alice Bazdikian</span>
+      <span style="color:rgba(255,255,255,0.2);">·</span>
+      <span style="font-size:0.78rem;color:rgba(255,255,255,0.5);">January 7, 2026</span>
+      <span style="color:rgba(255,255,255,0.2);">·</span>
+      <span style="font-size:0.78rem;color:rgba(255,255,255,0.5);">10 min read</span>
+    </div>
+  </div>
+</section>
+
+<section style="background:#FFFDF7;padding:5rem 0 7rem;">
+  <div style="max-width:1200px;margin:0 auto;padding:0 3rem;">
+    <div class="article-grid" style="display:grid;grid-template-columns:1fr 340px;gap:5rem;align-items:start;">
+      <article class="article-body">
+        <p>For most of my life, I wasn't just <em>in</em> my feelings — I <strong>was</strong> my feelings. If I was sad, I became Depression. If I was angry, I became Rage. If someone looked at me the wrong way in a meeting, it wasn't just an annoyance; it was a catastrophe that ruined my whole week.</p>
+        <p>I was a raw nerve ending walking through a world of sandpaper. I thought this meant I was "passionate" or "sensitive." I wore my intensity like a badge of honor. But really? I was exhausted. I was a puppet, and my emotions were pulling the strings.</p>
+        <p>We live in a culture that tells us to "feel our feelings." And yes, that is important — we shouldn't suppress them. But there is a massive difference between <em>feeling</em> a storm and <em>drowning</em> in it. That difference is called becoming untethered.</p>
+
+        <h2>The Hooks</h2>
+        <p>Imagine your consciousness is a calm lake. Every thought, emotion, or external event is a fishing hook cast into the water.</p>
+        <p><em>Hook:</em> Your boss sends a passive-aggressive email. <em>Hook:</em> You remember something cringey you said in 2004. <em>Hook:</em> You see your ex on Instagram looking happy.</p>
+        <p>Most of us bite every single hook. We bite it, and then we get dragged — dragged into the story, into the drama, into the spiral. Suddenly, we aren't swimming anymore; we are being reeled in by a narrative that isn't even real.</p>
+
+        <div class="pull-quote">"The moment you bite the hook, you lose your Sovereignty."</div>
+
+        <h2>Who Is the Observer?</h2>
+        <p>The game-changer for me was discovering the work of Michael Singer (<em>The Untethered Soul</em>). He asks a simple question that breaks your brain: <strong>"If you are the one hearing the voice in your head... who is the one listening?"</strong></p>
+        <p>You are not the voice. You are the <strong>Witness</strong>. You are the <strong>Observer</strong>.</p>
+        <p>This is the core of spiritual sovereignty. There are two of you in there:</p>
+        <p><strong>The Ego/Loki:</strong> The part that freaks out, judges, fears, and craves validation.<br><strong>The Soul/Observer:</strong> The part that watches the freak-out with total calm.</p>
+        <p>Becoming untethered doesn't mean you stop feeling. It means you stop <em>identifying</em> with the feeling. Instead of saying "I am angry," you say "I am experiencing anger." It sounds like semantics, but energetically? It is the difference between being hit by a train and watching a train go by.</p>
+
+        <h2>You Are The Sky</h2>
+
+        <div class="pull-quote">"You are the Sky. Your emotions are the Weather."</div>
+
+        <p>Clouds come. Thunderstorms come. Hurricanes come. Does the Sky freak out when a storm hits? Does the Sky say, "Oh no, I'm a terrible Sky because it's raining"? No. The Sky knows it is the container. It knows the storm is temporary. It knows the sun is still there, right behind the grey.</p>
+        <p>For years, I tried to "fix" my weather. I tried to force the sun to come out. I tried to analyze the clouds. But you cannot control the weather. You can only expand the Sky.</p>
+
+        <h2>The Practice of Leaning Away</h2>
+        <p>When a trigger hits — when that email lands, or that comment stings — your body naturally wants to constrict and lean in. You want to defend, explain, or attack. The sovereign move is to <strong>relax and lean away</strong>.</p>
+        <p>It feels counter-intuitive. It feels like you are doing nothing. But actually, you are keeping your energy channel open. You are imagining the trigger passing <em>through</em> you, like wind through a screen door, rather than hitting a solid wall.</p>
+        <p>If you are a solid wall (tense, defensive), the bullet hits you and explodes. If you are empty space (untethered, relaxed), the bullet passes through. You remain untouched.</p>
+
+        <h2>The Space Between Trapezes</h2>
+        <p>Becoming untethered is scary because it feels like freefall. We are so used to holding onto our trauma, our stories, and our identities that letting go feels like dying.</p>
+        <p>I call this the <strong>Space Between Trapezes</strong>. You have let go of the old bar — your old identity, your need for control — but you haven't caught the new bar yet. You are floating in the Void.</p>
+        <p>The Ego hates the Void. The Ego screams, "Grab something! Anything! Panicking is better than floating!" But the Sovereign knows that the Void is where the magic happens. The Void is the Chrysalis. It is the place where the caterpillar dissolves into goo before it gets its wings.</p>
+
+        <div class="pull-quote">"True freedom is an internal state. It is the ability to sit in a chaotic room and remain at peace."</div>
+
+        <p>I am not perfect at this. "Loki" still tries to grab the wheel. I still bite the hook sometimes. But the recovery time is faster now. I catch myself. I laugh. I spit out the hook. And I remember: <strong>I am the Sky.</strong></p>
+        <p>And so are you. Let the clouds pass. The sun is waiting.</p>
+
+        <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(58,80,41,0.1);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+          <a href="blog.html" style="font-size:0.78rem;letter-spacing:0.12em;text-transform:uppercase;color:#4A8A7C;text-decoration:none;font-weight:600;">← Back to All Essays</a>
+          <a href="audit.html" target="_blank" rel="noopener" class="btn-coral" style="font-size:0.72rem;padding:0.7rem 1.4rem;">Take the Free Audit</a>
+        </div>
+      </article>
+
+      <aside class="sidebar" style="position:sticky;top:6rem;">
+        <div class="sidebar-card">
+          <div style="width:60px;height:60px;border-radius:50%;overflow:hidden;margin-bottom:1rem;border:2px solid rgba(58,80,41,0.1);">
+            <img src="brand_assets/Alice-Meditating.jpg" alt="Alice Bazdikian" style="width:100%;height:100%;object-fit:cover;object-position:45% 20%;">
+          </div>
+          <p class="font-display" style="font-size:1.1rem;font-weight:600;color:#1a1a1a;margin-bottom:0.25rem;">Alice Bazdikian</p>
+          <p style="font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:#888;margin-bottom:1rem;font-weight:500;">Author · Speaker · Catalyst</p>
+          <p style="font-size:0.88rem;line-height:1.75;color:#555;font-weight:300;margin-bottom:1.25rem;">Alice helps high-capacity women in midlife reclaim self-authorship through her book <em>Sovereign AF</em> and live speaking.</p>
+          <a href="about.html" style="font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:#3A5029;text-decoration:none;font-weight:600;border-bottom:1px solid rgba(58,80,41,0.3);">Read Her Story →</a>
+        </div>
+        <div class="sidebar-card" style="background:#3A5029;">
+          <p style="font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:#DAAFC1;font-weight:600;margin-bottom:0.75rem;">Free Assessment</p>
+          <p class="font-display" style="font-size:1.2rem;font-weight:600;color:white;line-height:1.3;margin-bottom:0.75rem;">Are you living sovereign — or just functioning?</p>
+          <p style="font-size:0.85rem;color:rgba(255,255,255,0.6);line-height:1.7;margin-bottom:1.25rem;font-weight:300;">Take the free 25-question Sovereignty Audit to find out.</p>
+          <a href="audit.html" target="_blank" rel="noopener" class="btn-coral" style="font-size:0.72rem;padding:0.7rem 1.25rem;display:block;text-align:center;">Take the Free Audit</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<footer class="grain" style="background:#3A5029;padding:5rem 0 2.5rem;position:relative;">
+  <div style="max-width:1280px;margin:0 auto;padding:0 3rem;">
+    <div style="display:grid;grid-template-columns:1.5fr 1fr 1.5fr;gap:4rem;margin-bottom:4rem;">
+      <div><a href="index.html" class="font-display" style="font-size:1.6rem;font-weight:400;color:white;text-decoration:none;display:block;margin-bottom:1.25rem;">Alice Bazdikian</a><p style="font-size:0.9rem;color:rgba(255,255,255,0.5);line-height:1.75;font-weight:300;">I help high-capacity women who have outgrown their lives reclaim sovereignty without burning everything down.</p></div>
+      <div><h4 style="font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.4);font-weight:500;margin-bottom:1.5rem;">Navigate</h4><nav style="display:flex;flex-direction:column;gap:0.8rem;"><a href="about.html" style="font-size:0.9rem;color:rgba(255,255,255,0.65);text-decoration:none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">About Alice</a><a href="book.html" style="font-size:0.9rem;color:rgba(255,255,255,0.65);text-decoration:none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">Sovereign AF Book</a><a href="blog.html" style="font-size:0.9rem;color:rgba(255,255,255,0.65);text-decoration:none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">The Blog</a><a href="audit.html" target="_blank" rel="noopener" style="font-size:0.9rem;color:rgba(255,255,255,0.65);text-decoration:none;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.65)'">Sovereignty Audit</a></nav></div>
+      <div><h4 style="font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.4);font-weight:500;margin-bottom:1.5rem;">Connect</h4><p style="font-size:0.88rem;color:rgba(255,255,255,0.55);line-height:1.75;margin-bottom:1.5rem;font-weight:300;">Follow the movement on Instagram, TikTok, and YouTube.</p><div style="display:flex;gap:1.25rem;align-items:center;"><a href="https://www.instagram.com/sovereignaflife/" target="_blank" rel="noopener" aria-label="Instagram" style="color:rgba(255,255,255,0.65);transition:color 0.2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.65)'"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg></a><a href="https://www.tiktok.com/@sovereignaflife" target="_blank" rel="noopener" aria-label="TikTok" style="color:rgba(255,255,255,0.65);transition:color 0.2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.65)'"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.19 8.19 0 0 0 4.78 1.52V6.76a4.84 4.84 0 0 1-1.01-.07z"/></svg></a><a href="https://www.youtube.com/channel/UCL98E-OQm_vggDuTjxkbJFg" target="_blank" rel="noopener" aria-label="YouTube" style="color:rgba(255,255,255,0.65);transition:color 0.2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.65)'"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.54 3.6 12 3.6 12 3.6s-7.54 0-9.38.45A3.02 3.02 0 0 0 .5 6.19 31.7 31.7 0 0 0 .05 12a31.7 31.7 0 0 0 .45 5.81 3.02 3.02 0 0 0 2.12 2.14C4.46 20.4 12 20.4 12 20.4s7.54 0 9.38-.45a3.02 3.02 0 0 0 2.12-2.14A31.7 31.7 0 0 0 23.95 12a31.7 31.7 0 0 0-.45-5.81zM9.75 15.52V8.48L15.5 12l-5.75 3.52z"/></svg></a></div></div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+      <p style="font-size:0.8rem;color:rgba(255,255,255,0.35);">© 2026 Alice Bazdikian. All rights reserved.</p>
+      <p class="font-display" style="font-size:0.85rem;color:rgba(255,255,255,0.2);letter-spacing:0.15em;font-style:italic;">Sovereign AF</p>
+    </div>
+  </div>
+</footer>
+<script>
+document.getElementById('mob-btn').addEventListener('click', () => { document.getElementById('mob-nav').style.display = 'flex'; });
+document.getElementById('mob-close').addEventListener('click', () => { document.getElementById('mob-nav').style.display = 'none'; });
+window.addEventListener('scroll', () => { document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20); });
+</script>
+</body>
+</html>
